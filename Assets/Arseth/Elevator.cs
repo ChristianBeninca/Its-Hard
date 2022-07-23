@@ -16,12 +16,15 @@ public class Elevator : MonoBehaviour
     public Transform spriteRenderer;
     public GameObject[] rooms;
 
+    public Animator elevatorAnimator;
+
     #region Collisions
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision == playerCollider)
         {
             isInElevator = true;
+            elevatorAnimator.SetTrigger("Open");
         }
     }
 
@@ -30,6 +33,7 @@ public class Elevator : MonoBehaviour
         if (collision == playerCollider)
         {
             isInElevator = false;
+            elevatorAnimator.SetTrigger("Close");
         }
     }
     #endregion
