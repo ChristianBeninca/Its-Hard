@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     Coroutine hintAnimation;
     public GameObject InteractionHint;
 
+    [SerializeField]
+    PlayerAnimation playerAnim;
+
     float horizontal;
     float vertical;
 
@@ -44,6 +47,7 @@ public class Player : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        playerAnim.SetParams(horizontal, vertical);
     }
 
     private void FixedUpdate()
