@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     float horizontal;
     float vertical;
 
+    Dictionary<string, bool> inventory = new Dictionary<string, bool>();
+
     public  float runSpeed = 5.0f;
 
     #region Collisions
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        PopulateInventory();
         startScale = InteractionHint.transform.localScale;
         body = GetComponent<Rigidbody2D>();
     }
@@ -53,6 +56,17 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+    }
+
+    void PopulateInventory()
+    {
+        inventory.Add("shovel", false);
+        inventory.Add("chest", false);
+        inventory.Add("sapling", false);
+        inventory.Add("watering can", false);
+        inventory.Add("fruit", false);
+        inventory.Add("rat", false);
+        inventory.Add("Chest key", false);
     }
 
     IEnumerator InteractionHintAnimation()
