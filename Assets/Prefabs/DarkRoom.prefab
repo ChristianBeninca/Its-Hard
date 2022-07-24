@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 3197549902745490796}
   - component: {fileID: 3197549902745490799}
   m_Layer: 0
-  m_Name: dark-room
+  m_Name: DarkRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
